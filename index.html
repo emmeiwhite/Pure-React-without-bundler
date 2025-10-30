@@ -20,7 +20,10 @@
     <script>
       // App Component
       function App() {
-        return React.createElement('header', null, 'Hello React!')
+        // We can write any normal JavaScript over here
+
+        const time = new Date().toLocaleTimeString()
+        return React.createElement('header', null, `Hello React! The time is ${time}`)
       }
 
       //   Let's create a root element where all our single page application will reside
