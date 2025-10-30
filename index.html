@@ -14,5 +14,18 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <!-- ReactDOM library (for DOM manipulation) -->
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Let's write our React code here | No Babel transpiler as well, so we will write pure JavaScript code -->
+
+    <script>
+      // App Component
+      function App() {
+        return React.createElement('header')
+      }
+
+      //   Let's create a root element where all our single page application will reside
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      root.render(React.createElement(App))
+    </script>
   </body>
 </html>
