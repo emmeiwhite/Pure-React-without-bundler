@@ -23,9 +23,18 @@
         // We can write any normal JavaScript over here, let's update time per second, and for that we need the concept of state, We  already know that whenever we have to update something in the UI, we need to change the state
         const [time, setTime] = React.useState(new Date().toLocaleTimeString())
 
-        setInterval(() => {
-          setTime(new Date().toLocaleTimeString())
-        }, 1000)
+        // We need useEffect() hook to perform WebAPI side effects
+
+        React.useEffect(() => {
+          const interval = setInterval(() => {
+            setTime(new Date().toLocaleTimeString())
+          }, 1000)
+
+          // To clean up the code when app stops
+          return () => {
+            clearInterval(interval)
+          }
+        }, [])
 
         return React.createElement('header', null, `Hello React! The time is ${time}`)
       }
